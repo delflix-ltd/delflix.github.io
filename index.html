@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ретро-Магазин</title>
+  <style>
+    :root{
+      --bg: #f6efe3;
+      --card: #fffaf0;
+      --accent: #b44f2f;
+      --text: #2b2b2b;
+      --muted: #6b5c3e;
+      --gold: #d4a017;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family: "Segoe UI", Roboto, Arial, sans-serif;}
+    .wrapper{max-width:1100px;margin:0 auto;padding:24px}
+    header{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:16px 20px;background:linear-gradient(#fff,#f6e8c6);
+      border-bottom:4px solid var(--gold);
+      border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,.08);
+      position:relative;
+      overflow:hidden;
+    }
+    header:before{
+      content:"";
+      position:absolute;inset:0;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="240" height="120" viewBox="0 0 24 12" fill="none"><path d="M0 3h24" stroke="%23d9c29b" stroke-width="0.8"/><path d="M0 6h24" stroke="%23e9d4a7" stroke-width="0.8"/></svg>') left/top;
+      opacity:.25;
+      pointer-events:none;
+      z-index:0;
+    }
+    .brand{display:flex;align-items:center;gap:12px;position:relative;z-index:1}
+    .brand .logo{
+      width:48px;height:48px;border-radius:8px;
+      background: #fff; display:grid;place-items:center;
+      box-shadow:0 2px 6px rgba(0,0,0,.15);
+      border:2px solid var(--gold);
+    }
+    .brand h1{font-size:22px;margin:0;letter-spacing:1px}
+    .brand p{margin:0;font-size:12px;color:var(--muted);letter-spacing:.5px}
+    .cta{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{
+      padding:10px 14px;border-radius:8px;border:0;
+      background: var(--gold); color:#2b1b00;font-weight:700;
+      text-decoration:none;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.15);
+    }
+    .btn.secondary{background:#fff;color:var(--text);border:2px solid var(--gold)}
+    main{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;margin-top:20px}
+    .card{background:var(--card);border-radius:14px;padding:22px;box-shadow:0 6px 18px rgba(0,0,0,.08);}
+    h2{margin-top:0;color:#2b1b00}
+    .tag{display:inline-block;padding:.25em .6em;border-radius:999px;background:#fff0c2;border:1px solid #e0c07a;font-size:.8em;margin-right:6px}
+    .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .gallery img{width:100%;height:120px;object-fit:cover;border-radius:10px;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+    aside{display:flex;flex-direction:column;gap:12px}
+    ul{margin:0 0 6px 0;padding:0 0 0 16px}
+    footer{text-align:center;margin:40px 0 20px;color:var(--muted);font-size:12px}
+    @media (max-width: 980px){
+      main{grid-template-columns:1fr}
+      .gallery{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 520px){
+      .gallery{grid-template-columns:1fr}
+      header{flex-direction:column;align-items:flex-start;gap:12px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-label="Иконка магазина">🕰️</div>
+        <div>
+          <h1>Магазин Ретро-Вкус</h1>
+          <p>лучшие товары в духе старой школы</p>
+        </div>
+      </div>
+      <nav class="cta">
+        <a href="#about" class="btn">О нас</a>
+        <a href="#catalog" class="btn secondary">Каталог</a>
+      </nav>
+    </header>
+
+    <main id="catalog">
+      <section class="card" aria-labelledby="title-collection">
+        <span class="tag">Ретро-стиль</span>
+        <span class="tag">Аутентичные детали</span>
+        <h2 id="title-collection">Добро пожаловать в наш магазин</h2>
+        <p>
+          Здесь мы собрали коллекцию товаров в духе прошлого века: виниловые пластинки, настольные наборы, сувениры в стиле ар-деко и многое другое. Каждый предмет — с историей.
+        </p>
+        <p>
+          Наши товары идеально подходят для подарков, фотосессий и оформления интерьеров в винтажном стиле.
+        </p>
+        <div class="gallery" aria-label="Изображения товаров">
+          <img src="https://images.unsplash.com/photo-1520974735345-1d0a2d3b352e?q=80&w=800&auto=format&fit=crop" alt="Витрина с винтажными товарами">
+          <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=800&auto=format&fit=crop" alt="Настольные аксессуары в ретро стиле">
+          <img src="https://images.unsplash.com/photo-1563219623-1f3f7d0b5b5a?q=80&w=800&auto=format&fit=crop" alt="Пластинки и проигрыватели">
+          <img src="https://images.unsplash.com/photo-1527443154391-507e9dc6c5a3?q=80&w=800&auto=format&fit=crop" alt="Декор в стиле 60-х">
+        </div>
+      </section>
+
+      <aside class="card" aria-label="Контактная информация">
+        <h3 style="margin-top:0">Контакты</h3>
+        <ul>
+          <li><strong>Адрес:</strong> ул. Литературная, 7, г. Москва</li>
+          <li><strong>Телефон:</strong> +7 (495) 123-45-67</li>
+          <li><strong>Email:</strong> hello@retroshop.ru</li>
+        </ul>
+        <p style="margin:0">Мы работаем 6 дней в неделю, с 10:00 до 19:00.</p>
+        <p style="margin:6px 0 0"><em>Доставка по городу бесплатно при заказах от 3000 ₽.</em></p>
+        <hr>
+        <strong>Соцсетями:</strong>
+        <div style="display:flex;gap:8px;margin-top:6px">
+          <span class="tag" aria-label="Instagram">Instagram</span>
+          <span class="tag" aria-label="VK">VK</span>
+          <span class="tag" aria-label="Facebook">Facebook</span>
+        </div>
+        <button class="btn" style="width:100%;margin-top:8px" onclick="alert('Спасибо за интерес!')">Заказать звонок</button>
+      </aside>
+    </main>
+
+    <footer>
+      © 2025 Магазин Ретро-Вкус. Все права сохранены. Сделано с любовью к прошлому.
+    </footer>
+  </div>
+</body>
+</html>
